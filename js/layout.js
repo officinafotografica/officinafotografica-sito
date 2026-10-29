@@ -14,10 +14,10 @@
       <a href="index.html#portfolio" class="nav-link">Portfolio</a>
       <a href="index.html#contatti" class="btn-line px-5 py-2.5">Contatti</a>
       <span class="flex items-center gap-4 pl-2 border-l border-gold-500/25 text-sm normal-case tracking-normal">
-        <a data-social="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="nav-link"><i class="fa-brands fa-facebook-f"></i></a>
-        <a data-social="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="nav-link"><i class="fa-brands fa-instagram"></i></a>
+        <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="nav-link"><i class="fa-brands fa-facebook-f"></i></a>
+        <a data-social="instagram" href="https://www.instagram.com/officinafotograficaclub" target="_blank" rel="noopener" aria-label="Instagram" class="nav-link"><i class="fa-brands fa-instagram"></i></a>
         <a data-social="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="nav-link"><i class="fa-brands fa-tiktok"></i></a>
-        <a data-social="whatsapp" href="https://wa.me/3314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="nav-link"><i class="fa-brands fa-whatsapp"></i></a>
+        <a data-social="whatsapp" href="https://wa.me/393314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="nav-link"><i class="fa-brands fa-whatsapp"></i></a>
         <a data-social="google" href="https://g.page/r/CYPS9e1s4CcmEAE" target="_blank" rel="noopener" aria-label="Google" class="nav-link"><i class="fa-brands fa-google"></i></a>
       </span>
     </div>
@@ -31,10 +31,10 @@
     <a href="index.html#portfolio" class="block text-gray-300">Portfolio</a>
     <a href="index.html#contatti" class="block text-gold-400">Contatti</a>
     <div class="flex justify-center gap-4 pt-3 normal-case tracking-normal">
-      <a data-social="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
-      <a data-social="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social"><i class="fa-brands fa-instagram"></i></a>
+      <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+      <a data-social="instagram" href="https://www.instagram.com/officinafotograficaclub" target="_blank" rel="noopener" aria-label="Instagram" class="social"><i class="fa-brands fa-instagram"></i></a>
       <a data-social="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="social"><i class="fa-brands fa-tiktok"></i></a>
-      <a data-social="whatsapp" href="https://wa.me/3314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="social"><i class="fa-brands fa-whatsapp"></i></a>
+      <a data-social="whatsapp" href="https://wa.me/393314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="social"><i class="fa-brands fa-whatsapp"></i></a>
       <a data-social="google" href="https://g.page/r/CYPS9e1s4CcmEAE" target="_blank" rel="noopener" aria-label="Google" class="social"><i class="fa-brands fa-google"></i></a>
     </div>
   </div>
@@ -46,10 +46,10 @@
     <a href="chi-siamo.html" class="nav-link">Chi siamo</a><a href="fotografia.html" class="nav-link">Fotografia</a><a href="video.html" class="nav-link">Video</a><a href="index.html#corsi" class="nav-link">Corsi</a><a href="index.html#contatti" class="nav-link">Contatti</a>
   </nav>
   <div class="flex justify-center gap-3 mb-6">
-    <a data-social="facebook" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
-    <a data-social="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="social"><i class="fa-brands fa-instagram"></i></a>
+    <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+    <a data-social="instagram" href="https://www.instagram.com/officinafotograficaclub" target="_blank" rel="noopener" aria-label="Instagram" class="social"><i class="fa-brands fa-instagram"></i></a>
     <a data-social="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="social"><i class="fa-brands fa-tiktok"></i></a>
-    <a data-social="whatsapp" href="https://wa.me/3314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="social"><i class="fa-brands fa-whatsapp"></i></a>
+    <a data-social="whatsapp" href="https://wa.me/393314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="social"><i class="fa-brands fa-whatsapp"></i></a>
     <a data-social="google" href="https://g.page/r/CYPS9e1s4CcmEAE" target="_blank" rel="noopener" aria-label="Google" class="social"><i class="fa-brands fa-google"></i></a>
   </div>
   <p class="text-xs text-gray-500">© <span id="year"></span> Officina Fotografica · Castellammare di Stabia</p>
