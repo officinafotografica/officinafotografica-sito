@@ -1,5 +1,5 @@
 /* Officina Fotografica - logica del sito (editor contenuti, lightbox, form, animazioni).
-   Richiede js/layout.js caricato prima. */
+ Ri*chiede js/layout.js caricato prima. */
 (function () {
   var STORE = 'officina_fotografica_v2';
   var PAGE = document.body.dataset.page || 'home';
@@ -13,7 +13,7 @@
   function embedUrl(u) {
     var m = u.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
     if (m) return 'https://www.youtube.com/embed/' + m[1];
-    m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+      m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
     return m ? 'https://player.vimeo.com/video/' + m[1] : null;
   }
   function renderReel(u) {
@@ -49,16 +49,16 @@
       var k = el.dataset.key;
       if (el.innerHTML !== el.dataset.original) data.texts[k] = el.innerHTML; else delete data.texts[k];
     });
-    images.forEach(function (el) {
-      var k = el.getAttribute('data-img'), src = el._img.getAttribute('src');
-      if (src !== el.dataset.original) data.images[k] = src; else delete data.images[k];
-    });
-    socials.forEach(function (a) {
-      var k = a.dataset.social, h = a.getAttribute('href');
-      if (h !== a.dataset.original) data.links[k] = h; else delete data.links[k];
-    });
-    if (reel) { if (reel.dataset.url) data.links.showreel = reel.dataset.url; else delete data.links.showreel; }
-    return data;
+      images.forEach(function (el) {
+        var k = el.getAttribute('data-img'), src = el._img.getAttribute('src');
+        if (src !== el.dataset.original) data.images[k] = src; else delete data.images[k];
+      });
+        socials.forEach(function (a) {
+          var k = a.dataset.social, h = a.getAttribute('href');
+          if (h !== a.dataset.original) data.links[k] = h; else delete data.links[k];
+        });
+          if (reel) { if (reel.dataset.url) data.links.showreel = reel.dataset.url; else delete data.links.showreel; }
+          return data;
   }
   function apply(data) {
     if (!data) return;
@@ -88,8 +88,8 @@
     tools.classList.toggle('hidden', !on); tools.classList.toggle('flex', on);
     btnText.textContent = on ? 'Esci' : 'Modifica sito';
     btn.className = on
-      ? 'px-5 py-2.5 rounded-full border border-gold-500/50 text-gold-200 font-semibold flex items-center gap-2'
-      : 'px-5 py-2.5 rounded-full bg-gold-500 text-ink-900 font-semibold flex items-center gap-2';
+    ? 'px-5 py-2.5 rounded-full border border-gold-500/50 text-gold-200 font-semibold flex items-center gap-2'
+    : 'px-5 py-2.5 rounded-full bg-gold-500 text-ink-900 font-semibold flex items-center gap-2';
     btn.firstElementChild.className = on ? 'fa-solid fa-xmark' : 'fa-solid fa-pen';
     if (on) toast('Clicca su testi, foto, icone social o showreel per modificarli');
   }
@@ -156,9 +156,9 @@
   });
   if (reel) reel.addEventListener('click', function () {
     if (!editing) return;
-    var u = prompt('Incolla il link del video (YouTube o Vimeo). Lascia vuoto per rimuoverlo.', reel.dataset.url || '');
+                                  var u = prompt('Incolla il link del video (YouTube o Vimeo). Lascia vuoto per rimuoverlo.', reel.dataset.url || '');
     if (u === null) return;
-    u = u.trim();
+                                  u = u.trim();
     if (u && !embedUrl(u)) { toast('Link non riconosciuto: usa YouTube o Vimeo'); return; }
     renderReel(u); persist(collect()); toast(u ? 'Video aggiornato' : 'Video rimosso');
   });
@@ -217,23 +217,26 @@
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
   /* ---------- FORM (solo home) ----------
-     Invio email tramite FormSubmit (gratuito). Cambiare qui l'indirizzo di destinazione. */
-  var MAIL_TO = 'sasimillennium@gmail.com';
+   *Invio email tramite Web3Forms. La access key puo' stare nel codice pubblico. */
+  var WEB3_KEY = '018afc76-2989-4672-a209-6e10e62db8be';
   function sendForm(form, subject, okMsg) {
     var btn = form.querySelector('button'), label = btn.textContent;
     var fd = new FormData(form);
-    fd.append('_subject', subject);
-    fd.append('_template', 'table');
-    fd.append('_captcha', 'false');
+    fd.append('access_key', WEB3_KEY);
+    fd.append('subject', subject);
     btn.disabled = true; btn.textContent = 'Invio...';
-    fetch('https://formsubmit.co/ajax/' + MAIL_TO, { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d.success === 'true' || d.success === true) { toast(okMsg); form.reset(); }
-        else throw new Error(d.message || 'errore');
-      })
-      .catch(function () { toast('Invio non riuscito: riprova o scrivici su WhatsApp'); })
-      .then(function () { btn.disabled = false; btn.textContent = label; });
+    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      console.log('Web3Forms:', d);
+      if (d.success) { toast(okMsg); form.reset(); }
+      else throw new Error(d.message || 'errore');
+    })
+    .catch(function (err) {
+      console.error('Invio fallito:', err);
+      toast('Invio non riuscito: ' + err.message);
+    })
+    .then(function () { btn.disabled = false; btn.textContent = label; });
   }
   var cf = document.getElementById('contact-form');
   if (cf) cf.addEventListener('submit', function (e) {
