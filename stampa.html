@@ -165,18 +165,18 @@
   <!-- ORDINE -->
   <section id="orderView" hidden>
 
-    <div class="serif font-light text-4xl md:text-4xl text-white mb-6">
+    <div class="serif font-light text-4xl md:text-3xl text-white mb-6">
       <h2>I tuoi dati</h2>
-      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="nome">Nome e Cognome</label>
-      <input class="serif font-light text-4xl md:text-4xl text-white mb-6" id="nome" type="text" autocomplete="name">
-      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="telefono">Telefono</label>
-      <input  class="serif font-light text-4xl md:text-4xl text-white mb-6" id="telefono" type="tel" inputmode="tel" autocomplete="tel">
-      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="email">Email</label>
-      <input  class="serif font-light text-4xl md:text-4xl text-white mb-6" id="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" autocorrect="off" aria-describedby="emailErr">
+      <label for="nome">Nome e Cognome</label>
+      <input id="nome" type="text" autocomplete="name">
+      <label for="telefono">Telefono</label>
+      <input id="telefono" type="tel" inputmode="tel" autocomplete="tel">
+      <label for="email">Email</label>
+      <input id="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" autocorrect="off" aria-describedby="emailErr">
       <p class="fieldErr" id="emailErr"></p>
-      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="note">Note aggiuntive (opzionale)</label>
-      <textarea class="serif font-light text-4xl md:text-4xl text-white mb-6" id="note" maxlength="300"></textarea>
-      <div class="serif font-light text-4xl md:text-4xl text-white mb-6" class="right" id="clearWrap" hidden>
+      <label for="note">Note aggiuntive (opzionale)</label>
+      <textarea id="note" maxlength="300"></textarea>
+      <div class="right" id="clearWrap" hidden>
         <button class="textbtn danger" id="clearBtn" type="button">Cancella i miei dati salvati</button>
       </div>
     </div>
