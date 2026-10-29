@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotografia | Officina Fotografica</title>
+<meta name="description" content="Servizi fotografici professionali: ritratto, newborn, fashion, outdoor, dettagli e macro.">
+<link rel="icon" href="assets/img/logo.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  :root {
+    color-scheme: light dark;
+      --bg: #101316;
+      --surface: #1B1F24;
+      --ink: #EEF1F4;
+      --muted: #9BA3AC;
+      --line: #2C3238;
+      --accent: #EEF1F4;
+      --accent-ink: #15191E;
+      --chip: #2A3036;
+      --sky: #86C6EC;
+      --sky-ink: #0A2233;
+      --sky-deep: #86C6EC;
+      --danger: #FF8A80;
+      --ok: #7FD39A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101316;
+      --surface: #1B1F24;
+      --ink: #EEF1F4;
+      --muted: #9BA3AC;
+      --line: #2C3238;
+      --accent: #EEF1F4;
+      --accent-ink: #15191E;
+      --chip: #2A3036;
+      --sky: #86C6EC;
+      --sky-ink: #0A2233;
+      --sky-deep: #86C6EC;
+      --danger: #FF8A80;
+      --ok: #7FD39A;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.5 -apple-system, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 560px; margin: 0 auto; padding: 16px 16px 40px; }
+  .brand { text-align: center; margin-bottom: 16px; }
+  .brand img { width: 85%; max-width: 360px; height: auto; display: block; margin: 0 auto 4px; }
+  .brand h1 { font-size: 26px; line-height: 1.2; margin: 8px 0 0; letter-spacing: -0.01em; }
+  .brand p { margin: 2px 0 0; font-size: 15px; color: var(--muted); }
+  h2 { font-size: 18px; margin: 0 0 12px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; margin-bottom: 12px; }
+  label, .lbl { display: block; font-size: 15px; font-weight: 600; margin: 14px 0 6px; }
+  .card > label:first-of-type, .card > h2 + label { margin-top: 0; }
+  input[type=text], input[type=email], input[type=tel], input[type=password], textarea, select {
+    width: 100%; font: inherit; font-size: 17px; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px;
+    appearance: none; -webkit-appearance: none;
+  }
+  select {
+    background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+    background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%;
+    background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 38px;
+  }
+  textarea { min-height: 84px; resize: vertical; }
+  input[aria-invalid=true] { border-color: var(--danger); }
+  input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible, .pick:focus-within {
+    outline: 3px solid var(--sky-deep); outline-offset: 2px;
+  }
+  .hint { color: var(--muted); font-size: 14px; margin: 6px 0 0; }
+  .fieldErr { color: var(--danger); font-size: 14px; margin: 4px 0 0; min-height: 1.1em; }
+  .err { color: var(--danger); font-size: 15px; margin: 10px 0 0; }
+  button, .btn, .pick {
+    font: inherit; font-weight: 600; border-radius: 14px; border: 1px solid transparent; cursor: pointer;
+    padding: 12px 18px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center;
+    text-decoration: none; text-align: center;
+  }
+  .primary { background: var(--accent); color: var(--accent-ink); width: 100%; min-height: 56px; font-weight: 700; letter-spacing: .02em; }
+  .primary:disabled { opacity: .4; cursor: not-allowed; }
+  .outline { background: transparent; color: var(--ink); border-color: var(--line); }
+  .pick { background: var(--sky); color: var(--sky-ink); width: 100%; position: relative; }
+  .pick input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .textbtn { background: none; border: none; color: var(--muted); padding: 8px 6px; min-height: 0; font-weight: 500; font-size: 15px; }
+  .textbtn.danger { color: var(--danger); }
+  .right { display: flex; justify-content: flex-end; margin-top: 4px; }
+  .selCount { color: var(--ok); font-weight: 600; margin: 10px 0 0; }
+  .sheet { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+  .frame { position: relative; margin: 0; }
+  .frame img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: var(--line); display: block; }
+  .frame button {
+    position: absolute; top: 3px; right: 3px; width: 28px; height: 28px; min-height: 0; padding: 0;
+    border-radius: 50%; background: rgba(0,0,0,.65); color: #fff; font-size: 18px; line-height: 1;
+  }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { background: var(--chip); color: var(--ink); border-radius: 10px; min-height: 40px; padding: 8px 16px; font-weight: 500; }
+  .chip[aria-pressed=true] { background: var(--sky); color: var(--sky-ink); font-weight: 600; box-shadow: inset 0 0 0 2px var(--sky-deep); }
+  progress { width: 100%; height: 8px; margin: 0 0 8px; accent-color: var(--sky-deep); }
+  .status { font-weight: 500; margin: 0 0 12px; }
+  .status.ok { color: var(--ok); }
+  .status.bad { color: var(--danger); }
+  .help { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 12px; }
+  .help p { margin: 0 0 8px; font-size: 14px; color: var(--muted); }
+  .helpRow { display: flex; gap: 8px; }
+  .helpRow > * { flex: 1; }
+  dialog { border: 1px solid var(--line); border-radius: 18px; background: var(--surface); color: var(--ink); max-width: 480px; width: calc(100% - 32px); padding: 20px; }
+  dialog::backdrop { background: rgba(0,0,0,.5); }
+  dialog h2 { margin-bottom: 10px; }
+  dialog p { margin: 0 0 16px; font-size: 15px; }
+  .dlgRow { display: flex; justify-content: flex-end; gap: 8px; }
+  [hidden] { display: none !important; }
+</style>
+
+
+
+
+</head>
+
+<body data-page="stampa">
+
+<div id="site-nav"></div>
+<main class="page-in">
+
+<section class="relative pt-44 pb-24 px-6 overflow-hidden">
+<div class="max-w-6xl mx-auto">
+
+<br>
+<br>
+<p>
+<h1>
+
+  <div class="serif font-light text-4xl sm:text-4xl md:text-4xl text-white leading-[1.02] tracking-tight mb-8 reveal">
+    <p align="center" class="gold-text italic">ORDINA LE TUE STAMPE</p>
+  </div>
+
+  <!-- ACCESSO -->
+  <section id="loginView" hidden>
+    <div>
+      <h2 align="center" class="serif font-light text-4xl md:text-3xl text-white mb-6">Accedi per ordinare</h2>
+      <label for="loginEmail">Email</label>
+      <input id="loginEmail" type="email" inputmode="email" autocomplete="username" autocapitalize="none" autocorrect="off">
+      <br>
+      <label for="loginPass">Password</label>
+      <input id="loginPass" type="password" autocomplete="current-password">
+      <p class="err" id="loginErr" role="alert"></p>
+      <div style="margin-top:12px"><button class="primary" id="loginBtn" type="button">ACCEDI</button></div>
+    </div><br>
+    <p class="serif font-light text-2xl md:text-2xl text-white mb-6">Non hai le credenziali? Chiedile in negozio.</p>
+  </section>
+
+  <!-- ORDINE -->
+  <section id="orderView" hidden>
+
+    <div class="serif font-light text-4xl md:text-4xl text-white mb-6">
+      <h2>I tuoi dati</h2>
+      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="nome">Nome e Cognome</label>
+      <input class="serif font-light text-4xl md:text-4xl text-white mb-6" id="nome" type="text" autocomplete="name">
+      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="telefono">Telefono</label>
+      <input  class="serif font-light text-4xl md:text-4xl text-white mb-6" id="telefono" type="tel" inputmode="tel" autocomplete="tel">
+      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="email">Email</label>
+      <input  class="serif font-light text-4xl md:text-4xl text-white mb-6" id="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" autocorrect="off" aria-describedby="emailErr">
+      <p class="fieldErr" id="emailErr"></p>
+      <label class="serif font-light text-4xl md:text-4xl text-white mb-6" for="note">Note aggiuntive (opzionale)</label>
+      <textarea class="serif font-light text-4xl md:text-4xl text-white mb-6" id="note" maxlength="300"></textarea>
+      <div class="serif font-light text-4xl md:text-4xl text-white mb-6" class="right" id="clearWrap" hidden>
+        <button class="textbtn danger" id="clearBtn" type="button">Cancella i miei dati salvati</button>
+      </div>
+    </div>
+
+    <div class="serif font-light text-4xl md:text-3xl text-white mb-6">
+      <h2>Le tue foto</h2>
+      <label class="pick" for="files">
+        <input id="files" type="file" accept="image/*" multiple>
+        <span>Seleziona foto dalla galleria</span>
+      </label>
+      <p class="hint" id="selHint">Massimo 50 foto per invio.</p>
+      <p class="selCount" id="selCount" hidden></p>
+      <div class="sheet" id="sheet"></div>
+    </div>
+
+    <div class="serif font-light text-4xl md:text-3xl text-white mb-6">
+      <h2>Formato e carta</h2>
+      <p class="hint" style="margin:0 0 4px">Formato di stampa per tutte le foto</p>
+      <p class="hint" style="margin:0 0 10px">Carta Seta solo dal 30x30 cm in su</p>
+      <select id="formato" aria-label="Formato di stampa"></select>
+      <p class="lbl" style="font-weight:400;font-size:14px;color:var(--muted);margin-top:16px">Finitura carta</p>
+      <div class="chips" id="carte" role="group" aria-label="Finitura carta"></div>
+    </div>
+
+    <div class="serif font-light text-4xl md:text-3xl text-white mb-6">
+      <progress id="bar" max="100" value="0" hidden></progress>
+      <p class="status" id="status" aria-live="polite" hidden></p>
+      <button class="primary" id="sendBtn" type="button" disabled>INVIA ORDINE</button>
+      <button class="primary" id="newBtn" type="button" hidden>NUOVO ORDINE</button>
+      <a class="btn outline" id="reportBtn" target="_blank" rel="noopener" style="width:100%;margin-top:8px" hidden>Segnala il problema su WhatsApp</a>
+    </div>
+
+    <div class="serif font-light text-2xl md:text-2xl text-white mb-6">
+      <p>Hai bisogno di aiuto?</p>
+      <div class="helpRow">
+        <a class="btn outline" id="waBtn" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn outline" id="mailBtn">Email</a>
+      </div>
+      <div class="right" style="margin-top:8px"><button class="textbtn" id="logoutBtn" type="button">Esci</button></div>
+    </div>
+  </section>
+
+</main>
+
+<dialog id="privacy">
+  <h2>Privacy e Conferma</h2>
+  <p>I dati personali raccolti (Nome, Telefono, Email e Immagini) verranno utilizzati esclusivamente per l’elaborazione del presente ordine di stampa, in conformità con il GDPR. Nome, telefono ed email vengono inoltre memorizzati sul tuo dispositivo per precompilare i prossimi ordini: puoi cancellarli in qualsiasi momento dal tasto “Cancella i miei dati salvati”. Le immagini verranno caricate sul cloud protetto (Supabase). Vuoi continuare?</p>
+  <div class="dlgRow">
+    <button class="textbtn" id="privNo" type="button">Annulla</button>
+    <button class="textbtn" id="privYes" type="button" style="color:var(--ink);font-weight:700">Accetto</button>
+  </div>
+</dialog>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* =================== IMPOSTAZIONI (le stesse dell’app Android) =================== */
+const SUPABASE_URL = "https://axbebibrbykrplqazwqw.supabase.co";
+const SUPABASE_CHIAVE_PUBBLICA = "sb_publishable_upwTuR5ETkX5m0KYbhCxXQ_ZUyuobXC"; // solo chiave pubblica
+const SUPABASE_BUCKET = "ordini";
+
+const WHATSAPP_NUMERO = "393314667946";
+const EMAIL_STUDIO = "officinafotografica@tim.it";
+
+// Notifica ntfy sul tuo telefono. "" = disattivata.
+// Attenzione: nella pagina il nome del topic è leggibile da chi apre il codice.
+const NTFY_TOPIC = "";
+
+const DPI_STAMPA = 300;
+const QUALITA_JPEG = 0.92;
+const MAX_FOTO = 50;
+const MAX_PIXEL_CANVAS = 16000000; // limite pratico di Safari su iPhone per una singola immagine ridisegnata
+const FORMATI = ["7x10","10x10","10x15","12x18","13x18","15x20","15x21","18x24","20x20","20x25","24x30","24x36","25x25","25x30","30x30","30x40","30x45","40x40","40x50","40x60","50x50","50x60","50x70"];
+const CARTE = ["Lucida", "Satinata", "Seta"];
+/* ================================================================================== */
+
+const client = supabase.createClient(SUPABASE_URL, SUPABASE_CHIAVE_PUBBLICA);
+const $ = (id) => document.getElementById(id);
+const STORE_KEY = "officina.dati_cliente";
+const REGEX_EMAIL = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}$/;
+
+let selected = [];          // [{file, url}]
+let formatoScelto = "10x15";
+let cartaScelta = "Lucida";
+let uploading = false;
+let wakeLock = null;
+
+/* ---------------- utilità ---------------- */
+const emailValida = (v) => REGEX_EMAIL.test(v.trim());
+const senzaAccenti = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+/* ---------------- dati salvati sul telefono ---------------- */
+function leggiSalvati() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); } catch (e) { return {}; }
+}
+function caricaDati() {
+  const d = leggiSalvati();
+  $("nome").value = d.nome || ""; $("telefono").value = d.telefono || ""; $("email").value = d.email || "";
+  aggiorna();
+}
+function salvaDati() {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify({
+      nome: $("nome").value.trim(), telefono: $("telefono").value.trim(), email: $("email").value.trim()
+    }));
+  } catch (e) {}
+}
+$("clearBtn").addEventListener("click", () => {
+  try { localStorage.removeItem(STORE_KEY); } catch (e) {}
+  $("nome").value = ""; $("telefono").value = ""; $("email").value = "";
+  aggiorna();
+});
+
+/* ---------------- stato dei campi e del pulsante ---------------- */
+function aggiorna() {
+  const email = $("email").value;
+  const okEmail = emailValida(email);
+  const errore = email.trim() !== "" && !okEmail;
+  $("email").setAttribute("aria-invalid", errore ? "true" : "false");
+  $("emailErr").textContent = errore ? "Inserisci un’email valida (es. nome@dominio.it)" : "";
+  const d = leggiSalvati();
+  $("clearWrap").hidden = !(d.nome || d.telefono || d.email) || uploading;
+  $("sendBtn").disabled = !($("nome").value.trim() && $("telefono").value.trim() && okEmail && selected.length > 0) || uploading;
+  const c = $("selCount"), h = $("selHint");
+  c.hidden = selected.length === 0; h.hidden = selected.length > 0;
+  c.textContent = "Selezionate: " + selected.length + "/" + MAX_FOTO + " foto";
+  const sheet = $("sheet");
+  sheet.innerHTML = "";
+  selected.forEach((item, i) => {
+    const fig = document.createElement("figure");
+    fig.className = "frame";
+    const img = document.createElement("img");
+    img.src = item.url; img.alt = "Foto " + (i + 1); img.loading = "lazy"; img.decoding = "async";
+    const rm = document.createElement("button");
+    rm.type = "button"; rm.textContent = "×"; rm.setAttribute("aria-label", "Rimuovi foto " + (i + 1));
+    rm.addEventListener("click", () => {
+      if (uploading) return;
+      URL.revokeObjectURL(item.url); selected.splice(i, 1); aggiorna();
+    });
+    fig.append(img, rm);
+    sheet.appendChild(fig);
+  });
+}
+["nome", "telefono", "email", "note"].forEach((id) => $(id).addEventListener("input", aggiorna));
+
+/* ---------------- formato e carta ---------------- */
+FORMATI.forEach((f) => {
+  const o = document.createElement("option");
+  o.value = f; o.textContent = f + " cm"; $("formato").appendChild(o);
+});
+$("formato").value = formatoScelto;
+$("formato").addEventListener("change", (e) => { formatoScelto = e.target.value; });
+function disegnaCarte() {
+  const box = $("carte");
+  box.innerHTML = "";
+  CARTE.forEach((c) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = c;
+    b.setAttribute("aria-pressed", String(c === cartaScelta));
+    b.addEventListener("click", () => { cartaScelta = c; disegnaCarte(); });
+    box.appendChild(b);
+  });
+}
+disegnaCarte();
+
+/* ---------------- selezione foto ---------------- */
+$("files").addEventListener("change", (e) => {
+  for (const f of e.target.files) {
+    if (selected.length >= MAX_FOTO) break;
+    selected.push({ file: f, url: URL.createObjectURL(f) });
+  }
+  e.target.value = "";
+  aggiorna();
+});
+
+/* ---------------- accesso ---------------- */
+function mostra(vista) {
+  $("loginView").hidden = vista !== "login";
+  $("orderView").hidden = vista !== "order";
+}
+async function controllaSessione() {
+  const { data } = await client.auth.getSession();
+  if (data && data.session) { caricaDati(); mostra("order"); } else { mostra("login"); }
+}
+async function accedi() {
+  $("loginErr").textContent = "";
+  const email = $("loginEmail").value.trim(), password = $("loginPass").value;
+  if (!email || !password) { $("loginErr").textContent = "Inserisci email e password."; return; }
+  $("loginBtn").disabled = true;
+  const { error } = await client.auth.signInWithPassword({ email, password });
+  $("loginBtn").disabled = false;
+  if (error) { $("loginErr").textContent = "Email o password non corretti."; return; }
+  $("loginPass").value = "";
+  caricaDati(); mostra("order");
+}
+$("loginBtn").addEventListener("click", accedi);
+$("loginPass").addEventListener("keydown", (e) => { if (e.key === "Enter") accedi(); });
+$("logoutBtn").addEventListener("click", async () => {
+  if (uploading) return;
+  await client.auth.signOut();
+  mostra("login");
+});
+
+/* ---------------- contatti ---------------- */
+$("waBtn").href = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent("Ciao, vorrei un’informazione sulle stampe.");
+$("mailBtn").href = "mailto:" + EMAIL_STUDIO + "?subject=" + encodeURIComponent("Richiesta informazioni stampe");
+
+/* ---------------- ridimensionamento per il formato scelto ---------------- */
+// Come nell’app: si riduce alla risoluzione che serve per stampare (300 dpi), non si ingrandisce mai.
+// Le foto già piccole restano originali; se non sono JPEG vengono convertite in JPEG senza ridurle.
+async function preparaFoto(file, formato) {
+  const isJpeg = /jpe?g/i.test(file.type) || /\.jpe?g$/i.test(file.name);
+  const lati = formato.split("x").map(Number);
+  const lungo = Math.max(lati[0], lati[1]) / 2.54 * DPI_STAMPA;
+  const corto = Math.min(lati[0], lati[1]) / 2.54 * DPI_STAMPA;
+  let bmp = null;
+  try {
+    bmp = await createImageBitmap(file); // applica già l’orientamento EXIF
+    const w = bmp.width, h = bmp.height;
+    let scala = Math.max(lungo / Math.max(w, h), corto / Math.min(w, h));
+    if (scala >= 1) {
+      if (isJpeg) return file;
+      scala = 1;
+    }
+    let dw = Math.max(1, Math.round(w * scala)), dh = Math.max(1, Math.round(h * scala));
+    if (dw * dh > MAX_PIXEL_CANVAS) {
+      if (isJpeg) return file; // troppo grande da ridisegnare su iPhone: si invia l’originale
+      const r = Math.sqrt(MAX_PIXEL_CANVAS / (dw * dh));
+      dw = Math.floor(dw * r); dh = Math.floor(dh * r);
+    }
+    const cv = document.createElement("canvas");
+    cv.width = dw; cv.height = dh;
+    const ctx = cv.getContext("2d");
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(bmp, 0, 0, dw, dh);
+    const blob = await new Promise((res) => cv.toBlob(res, "image/jpeg", QUALITA_JPEG));
+    cv.width = 0; cv.height = 0;
+    return blob || file;
+  } catch (e) {
+    return file; // in caso di problemi si invia l’originale
+  } finally {
+    if (bmp && bmp.close) bmp.close();
+  }
+}
+
+/* ---------------- upload con avanzamento ---------------- */
+async function tokenSessione() {
+  const { data } = await client.auth.getSession();
+  if (!data || !data.session) throw new Error("sessione scaduta, accedi di nuovo");
+  return data.session.access_token;
+}
+function inviaFile(nomeRemoto, blob, tipo, onFrazione) {
+  return tokenSessione().then((token) => new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", SUPABASE_URL + "/storage/v1/object/" + SUPABASE_BUCKET + "/" + nomeRemoto);
+    xhr.setRequestHeader("apikey", SUPABASE_CHIAVE_PUBBLICA);
+    xhr.setRequestHeader("Authorization", "Bearer " + token);
+    xhr.setRequestHeader("Content-Type", tipo);
+    xhr.setRequestHeader("x-upsert", "false");
+    xhr.timeout = 300000;
+    xhr.upload.onprogress = (e) => { if (e.lengthComputable) onFrazione(e.loaded / e.total); };
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) return resolve();
+      const corpo = xhr.responseText || "";
+      // già presente: un tentativo precedente era arrivato a destinazione
+      if (xhr.status === 409 || /duplicate|already exists/i.test(corpo)) return resolve();
+      reject(new Error("risposta del server " + xhr.status + " " + corpo.slice(0, 200)));
+    };
+    xhr.onerror = () => reject(new Error("errore di rete"));
+    xhr.ontimeout = () => reject(new Error("tempo scaduto"));
+    xhr.send(blob);
+  }));
+}
+async function conRiprovi(azione) {
+  for (let tentativo = 1; ; tentativo++) {
+    try { return await azione(); }
+    catch (e) {
+      if (tentativo >= 3) throw e;
+      await new Promise((r) => setTimeout(r, 1500 * tentativo));
+    }
+  }
+}
+
+/* ---------------- schermo acceso durante l’invio ---------------- */
+async function tieniSveglio(attivo) {
+  try {
+    if (attivo) { wakeLock = await navigator.wakeLock.request("screen"); }
+    else if (wakeLock) { await wakeLock.release(); wakeLock = null; }
+  } catch (e) {}
+}
+document.addEventListener("visibilitychange", () => {
+  if (uploading && document.visibilityState === "visible") tieniSveglio(true);
+});
+window.addEventListener("beforeunload", (e) => { if (uploading) { e.preventDefault(); e.returnValue = ""; } });
+
+/* ---------------- stato a video ---------------- */
+function stato(testo, tipo) {
+  const s = $("status");
+  s.hidden = !testo; s.textContent = testo || ""; s.className = "status" + (tipo ? " " + tipo : "");
+}
+function avanzamento(frazione, testo) {
+  $("bar").hidden = false; $("bar").value = Math.round(Math.min(1, Math.max(0, frazione)) * 100);
+  stato(testo);
+}
+
+/* ---------------- invio ordine ---------------- */
+$("sendBtn").addEventListener("click", () => $("privacy").showModal());
+$("privNo").addEventListener("click", () => $("privacy").close());
+$("privYes").addEventListener("click", () => { $("privacy").close(); avviaInvio(); });
+
+async function avviaInvio() {
+  const nome = $("nome").value.trim(), telefono = $("telefono").value.trim(), email = $("email").value.trim();
+  const note = $("note").value;
+  const formato = formatoScelto, carta = cartaScelta;
+  const totale = selected.length;
+
+  salvaDati();
+  uploading = true; aggiorna();
+  $("reportBtn").hidden = true;
+  tieniSveglio(true);
+
+  // Stessi nomi file dell’app Android (senza accenti, perché lo storage non li accetta in modo affidabile)
+  const nomePulito = senzaAccenti(nome).replace(/\s+/g, "_").replace(/[^A-Za-z0-9_]/g, "");
+  const telPulito = telefono.replace(/\D/g, "");
+  const notePulite = note.trim()
+    ? senzaAccenti(note).replace(/\s+/g, "-").replace(/[^A-Za-z0-9\-]/g, "") || "NessunaNota"
+    : "NessunaNota";
+  const timestamp = Date.now();
+
+  let fase = "preparazione foto";
+  try {
+    for (let i = 0; i < totale; i++) {
+      fase = "invio foto " + (i + 1) + " di " + totale;
+      avanzamento(i / totale, "Preparazione foto " + (i + 1) + " di " + totale + "…");
+      const blob = await preparaFoto(selected[i].file, formato);
+      const nomeRemoto = "ORDINE_" + nomePulito + "_" + telPulito + "_" + formato + "_" + carta + "_" + notePulite + "_" + timestamp + "_" + (i + 1) + ".jpg";
+      await conRiprovi(() => inviaFile(nomeRemoto, blob, "image/jpeg", (f) => {
+        const tot = (i + f) / totale;
+        avanzamento(tot, "Invio foto " + (i + 1) + " di " + totale + " – " + Math.round(tot * 100) + "%");
+      }));
+    }
+
+    // Ultimo file: il riepilogo. Lo script Python scarica l’ordine solo quando lo trova.
+    fase = "invio riepilogo";
+    const riepilogo =
+      "Cliente: " + nome + "\n" +
+      "Telefono: " + telefono + "\n" +
+      "Email: " + email + "\n" +
+      "Formato: " + formato + "\n" +
+      "Carta: " + carta + "\n" +
+      "Foto: " + totale + "\n" +
+      "Note: " + (note.trim() ? note.replace(/\n/g, " ").trim() : "-") + "\n";
+    const nomeRiepilogo = "RIEPILOGO_" + nomePulito + "_" + telPulito + "_" + timestamp + ".txt";
+    await conRiprovi(() => inviaFile(nomeRiepilogo, new Blob([riepilogo], { type: "text/plain; charset=utf-8" }), "text/plain; charset=utf-8", () => {}));
+
+    if (NTFY_TOPIC) {
+      try {
+        await fetch("https://ntfy.sh/" + encodeURIComponent(NTFY_TOPIC), {
+          method: "POST",
+          headers: { "Title": "Nuovo ordine", "Tags": "camera" },
+          body: totale + " foto " + formato + " cm, carta " + carta
+        });
+      } catch (e) {}
+    }
+
+    avanzamento(1, "");
+    stato("Ordine inviato con successo! " + totale + " foto caricate.", "ok");
+    $("sendBtn").hidden = true; $("newBtn").hidden = false;
+  } catch (e) {
+    const msg = "Errore durante " + fase + ": " + (e && e.message ? e.message : e);
+    stato(msg, "bad");
+    const wa = "Ciao, ho avuto un problema nell’invio dell’ordine.\nNome: " + nome + "\nTelefono: " + telefono +
+      "\nFoto: " + totale + " – " + formato + " cm – " + carta + "\nErrore: " + msg;
+    $("reportBtn").href = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(wa);
+    $("reportBtn").hidden = false;
+  } finally {
+    uploading = false;
+    tieniSveglio(false);
+    $("bar").hidden = true;
+    aggiorna();
+  }
+}
+
+$("newBtn").addEventListener("click", () => {
+  selected.forEach((s) => URL.revokeObjectURL(s.url));
+  selected = []; $("note").value = "";
+  caricaDati();
+  stato("");
+  $("newBtn").hidden = true; $("sendBtn").hidden = false;
+  aggiorna();
+});
+
+aggiorna();
+controllaSessione();
+</script>
+
+
+
+
+<div id="site-footer"></div>
+<div id="site-extras"></div>
+
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
