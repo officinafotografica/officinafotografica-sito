@@ -1,0 +1,85 @@
+/* Officina Fotografica - stili del sito */
+  html { scroll-padding-top: 80px; }
+  body { font-family:'Inter',sans-serif; background:#1e1f25; color:#e4e4ea; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4,.serif { font-family:'Cormorant Garamond',serif; }
+
+  .gold-text { background:linear-gradient(120deg,#efe2bd,#c5a059 50%,#a8843f); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hairline { height:1px; background:linear-gradient(90deg,transparent,rgba(197,160,89,.6),transparent); }
+  .eyebrow { font-size:.7rem; letter-spacing:.35em; text-transform:uppercase; color:#c5a059; font-weight:500; }
+
+  .card { background:linear-gradient(160deg,rgba(26,26,34,.8),rgba(14,14,18,.9)); border:1px solid rgba(197,160,89,.14); transition:all .5s cubic-bezier(.2,.7,.2,1); position:relative; }
+  .card::before { content:""; position:absolute; left:0; top:0; width:100%; height:2px; background:linear-gradient(90deg,#c5a059,transparent); transform:scaleX(0); transform-origin:left; transition:transform .6s ease; }
+  .card:hover { border-color:rgba(197,160,89,.4); transform:translateY(-6px); box-shadow:0 24px 50px -20px rgba(0,0,0,.8); }
+  .card:hover::before { transform:scaleX(1); }
+
+  .btn-gold { background:linear-gradient(120deg,#d4b062,#a8843f); color:#0c0c10; transition:all .3s; }
+  .btn-gold:hover { filter:brightness(1.12); box-shadow:0 10px 30px -10px rgba(197,160,89,.6); }
+  .btn-line { border:1px solid rgba(197,160,89,.4); color:#e2cb93; transition:all .3s; }
+  .btn-line:hover { background:rgba(197,160,89,.1); border-color:#c5a059; }
+
+  .nav-scrolled { background:rgba(8,8,10,.88); backdrop-filter:blur(14px); border-bottom:1px solid rgba(197,160,89,.15); }
+
+  /* reveal */
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity:1; transform:none; }
+
+  /* portfolio */
+  .shot img { transition:transform 1s cubic-bezier(.2,.7,.2,1), filter .6s; filter:saturate(.9); }
+  .shot:hover img { transform:scale(1.07); filter:saturate(1.1); }
+  .shot .cap { background:linear-gradient(0deg,rgba(8,8,10,.9),rgba(8,8,10,0) 60%); opacity:0; transition:opacity .5s; }
+  .shot:hover .cap { opacity:1; }
+
+  input,textarea { transition:border-color .3s, box-shadow .3s; }
+  input:focus,textarea:focus { outline:none; border-color:#c5a059; box-shadow:0 0 0 3px rgba(197,160,89,.12); }
+
+  /* EDITOR */
+  body.editing [data-edit] { outline:1px dashed rgba(212,176,98,.7); outline-offset:4px; cursor:text; border-radius:2px; }
+  body.editing [data-edit]:hover { background:rgba(212,176,98,.08); }
+  body.editing [data-edit]:focus { outline:2px solid #d4b062; background:rgba(212,176,98,.1); }
+  body.editing [data-img] { cursor:pointer; }
+  body.editing [data-img]::after { content:"\f030  Cambia foto"; font-family:"Font Awesome 6 Free","Inter"; font-weight:900; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(8,8,10,.55); color:#e2cb93; font-size:.8rem; letter-spacing:.15em; text-transform:uppercase; z-index:5; }
+  body.editing .shot .cap { display:none; }
+  #dock { transition:transform .4s ease; }
+  .toast { position:fixed; left:50%; bottom:90px; transform:translate(-50%,20px); opacity:0; transition:all .4s; z-index:100; pointer-events:none; }
+  .toast.show { opacity:1; transform:translate(-50%,0); }
+  .nav-link { color:#d1d5db; transition:color .3s; }
+  .nav-link:hover, .nav-link.active { color:#d4b062; }
+  .page-in { animation:pageIn .7s ease both; }
+  @keyframes pageIn { from { opacity:0; transform:translateY(14px);} to { opacity:1; transform:none; } }
+  .social { width:2.75rem; height:2.75rem; border-radius:9999px; border:1px solid rgba(197,160,89,.4); display:inline-flex; align-items:center; justify-content:center; color:#d4b062; transition:all .3s; }
+  .social:hover { background:#c5a059; color:#0c0c10; transform:translateY(-3px); }
+  body.editing .social { outline:1px dashed rgba(212,176,98,.8); outline-offset:3px; }
+  body.editing #showreel iframe { pointer-events:none; }
+  body.editing #showreel { outline:1px dashed rgba(212,176,98,.8); outline-offset:4px; cursor:pointer; }
+  .frame-offset { position:relative; }
+  .frame-offset::after { content:""; position:absolute; inset:18px -18px -18px 18px; border:1px solid rgba(197,160,89,.45); z-index:-1; }
+  ::selection { background:#c5a059; color:#000; }
+
+/* ===== TEMA: nero (nav, hero, footer) / grigio scuro (base) / grigio chiaro (sezioni alternate) ===== */
+.section-mid   { background:#2c2d35; border-top:1px solid rgba(197,160,89,.18); }
+.section-light { background:#e3e3e7; border-block:1px solid rgba(0,0,0,.08); color:#33333b; }
+
+.section-light .text-white { color:#17171c !important; }
+.section-light .text-gray-300 { color:#3a3a43 !important; }
+.section-light .text-gray-400 { color:#4d4d57 !important; }
+.section-light .eyebrow, .section-light .text-gold-400, .section-light .text-gold-500 { color:#8a6a2a !important; }
+.section-light .text-gold-400:hover { color:#5e4516 !important; }
+.section-light .card { background:linear-gradient(160deg,#f7f7f8,#ececef); border-color:rgba(0,0,0,.1); }
+.section-light .card:hover { border-color:rgba(138,106,42,.55); box-shadow:0 24px 50px -24px rgba(0,0,0,.35); }
+.section-light .border-gold-500\/40 { border-color:rgba(138,106,42,.5) !important; }
+.section-light .btn-line { color:#5e4516; border-color:rgba(138,106,42,.6); }
+.section-light .btn-line:hover { background:rgba(138,106,42,.1); }
+.section-light .gold-text { background:linear-gradient(120deg,#a8843f,#8a6a2a 50%,#5e4516); -webkit-background-clip:text; background-clip:text; }
+.section-light .hairline { background:linear-gradient(90deg,transparent,rgba(138,106,42,.7),transparent); }
+.section-light .frame-offset::after { border-color:rgba(138,106,42,.5); }
+
+/* Card scure un po' piu' chiare del fondo */
+.card { background:linear-gradient(160deg,rgba(50,51,60,.85),rgba(34,35,42,.95)); }
+.section-light .card { background:linear-gradient(160deg,#f7f7f8,#ececef); }
+
+/* ===== TESTO PIU' GRANDE ===== */
+.text-xs   { font-size:.95rem !important; line-height:1.5rem !important; }
+.text-sm   { font-size:1.05rem !important; line-height:1.85rem !important; }
+.eyebrow   { font-size:.82rem; }
+[class*="text-[.6"], [class*="text-[.7"] { font-size:.84rem !important; }
+.leading-8 { font-size:1.1rem; }
