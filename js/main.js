@@ -218,7 +218,7 @@
 
   /* ---------- FORM (solo home) ----------
      Invio email tramite FormSubmit (gratuito). Cambiare qui l'indirizzo di destinazione. */
-  var MAIL_TO = 'officinafotografica@tim.it';
+  var MAIL_TO = 'sasimillennium@gmail.com';
   function sendForm(form, subject, okMsg) {
     var btn = form.querySelector('button'), label = btn.textContent;
     var fd = new FormData(form);
