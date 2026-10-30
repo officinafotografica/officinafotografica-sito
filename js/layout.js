@@ -17,7 +17,7 @@
       <span class="flex items-center gap-4 pl-2 border-l border-gold-500/25 text-sm normal-case tracking-normal">
         <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="nav-link"><i class="fa-brands fa-facebook-f"></i></a>
         <a data-social="instagram" href="https://www.instagram.com/officinafotograficapro" target="_blank" rel="noopener" aria-label="Instagram" class="nav-link"><i class="fa-brands fa-instagram"></i></a>
-        <a data-social="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="nav-link"><i class="fa-brands fa-tiktok"></i></a>
+        <a data-social="tiktok" href="https://www.tiktok.com/@officina.fotografica" target="_blank" rel="noopener" aria-label="TikTok" class="nav-link"><i class="fa-brands fa-tiktok"></i></a>
         <a data-social="whatsapp" href="https://wa.me/393314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="nav-link"><i class="fa-brands fa-whatsapp"></i></a>
         <a data-social="google" href="https://g.page/r/CYPS9e1s4CcmEAE" target="_blank" rel="noopener" aria-label="Google" class="nav-link"><i class="fa-brands fa-google"></i></a>
       </span>
@@ -35,7 +35,7 @@
     <div class="flex justify-center gap-4 pt-3 normal-case tracking-normal">
       <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
       <a data-social="instagram" href="https://www.instagram.com/officinafotograficapro" target="_blank" rel="noopener" aria-label="Instagram" class="social"><i class="fa-brands fa-instagram"></i></a>
-      <a data-social="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="social"><i class="fa-brands fa-tiktok"></i></a>
+      <a data-social="tiktok" href="https://www.tiktok.com/@officina.fotografica" target="_blank" rel="noopener" aria-label="TikTok" class="social"><i class="fa-brands fa-tiktok"></i></a>
       <a data-social="whatsapp" href="https://wa.me/393314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="social"><i class="fa-brands fa-whatsapp"></i></a>
       <a data-social="google" href="https://g.page/r/CYPS9e1s4CcmEAE" target="_blank" rel="noopener" aria-label="Google" class="social"><i class="fa-brands fa-google"></i></a>
     </div>
@@ -50,7 +50,7 @@
   <div class="flex justify-center gap-3 mb-6">
     <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
     <a data-social="instagram" href="https://www.instagram.com/officinafotograficapro" target="_blank" rel="noopener" aria-label="Instagram" class="social"><i class="fa-brands fa-instagram"></i></a>
-    <a data-social="tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" class="social"><i class="fa-brands fa-tiktok"></i></a>
+    <a data-social="tiktok" href="https://www.tiktok.com/@officina.fotografica" target="_blank" rel="noopener" aria-label="TikTok" class="social"><i class="fa-brands fa-tiktok"></i></a>
     <a data-social="whatsapp" href="https://wa.me/393314667946" target="_blank" rel="noopener" aria-label="WhatsApp" class="social"><i class="fa-brands fa-whatsapp"></i></a>
     <a data-social="google" href="https://g.page/r/CYPS9e1s4CcmEAE" target="_blank" rel="noopener" aria-label="Google" class="social"><i class="fa-brands fa-google"></i></a>
   </div>
