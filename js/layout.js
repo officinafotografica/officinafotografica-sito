@@ -6,13 +6,13 @@
     <a href="index.html" class="flex items-center gap-3">
       <img data-img="logo" src="assets/img/logo.png" alt="Officina Fotografica" class="h-11 md:h-14 object-contain">
     </a>
-    <div class="hidden lg:flex items-center gap-8 text-[.72rem] tracking-[.22em] uppercase">
+    <div class="hidden lg:flex items-center gap-8 text-[.85rem] tracking-[.22em] uppercase">
       <a href="chi-siamo.html" data-nav="chi-siamo" class="nav-link">Chi Siamo</a>
       <a href="fotografia.html" data-nav="fotografia" class="nav-link">Fotografia</a>
       <a href="video.html" data-nav="video" class="nav-link">Video</a>
-      <a href="blog.html" data-nav="blog" class="nav-link">Blog</a>
       <a href="index.html#corsi" class="nav-link">Corsi</a>
       <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+      <a href="blog.html" data-nav="blog" class="nav-link">Blog</a>
       <a href="index.html#contatti" class="btn-line px-5 py-2.5">Contatti</a>
       <span class="flex items-center gap-4 pl-2 border-l border-gold-500/25 text-sm normal-case tracking-normal">
         <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="nav-link"><i class="fa-brands fa-facebook-f"></i></a>
@@ -28,9 +28,9 @@
     <a href="chi-siamo.html" class="block text-gray-300">Chi Siamo</a>
     <a href="fotografia.html" class="block text-gray-300">Fotografia</a>
     <a href="video.html" class="block text-gray-300">Video</a>
-    <a href="blog.html" class="block text-gray-300">Blog</a>
     <a href="index.html#corsi" class="block text-gray-300">Corsi</a>
     <a href="index.html#portfolio" class="block text-gray-300">Portfolio</a>
+    <a href="blog.html" class="block text-gray-300">Blog</a>
     <a href="index.html#contatti" class="block text-gold-400">Contatti</a>
     <div class="flex justify-center gap-4 pt-3 normal-case tracking-normal">
       <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
