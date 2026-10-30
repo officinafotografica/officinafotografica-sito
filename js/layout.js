@@ -10,6 +10,7 @@
       <a href="chi-siamo.html" data-nav="chi-siamo" class="nav-link">Chi Siamo</a>
       <a href="fotografia.html" data-nav="fotografia" class="nav-link">Fotografia</a>
       <a href="video.html" data-nav="video" class="nav-link">Video</a>
+      <a href="blog.html" data-nav="blog" class="nav-link">Blog</a>
       <a href="index.html#corsi" class="nav-link">Corsi</a>
       <a href="index.html#portfolio" class="nav-link">Portfolio</a>
       <a href="index.html#contatti" class="btn-line px-5 py-2.5">Contatti</a>
@@ -27,6 +28,7 @@
     <a href="chi-siamo.html" class="block text-gray-300">Chi Siamo</a>
     <a href="fotografia.html" class="block text-gray-300">Fotografia</a>
     <a href="video.html" class="block text-gray-300">Video</a>
+    <a href="blog.html" class="block text-gray-300">Blog</a>
     <a href="index.html#corsi" class="block text-gray-300">Corsi</a>
     <a href="index.html#portfolio" class="block text-gray-300">Portfolio</a>
     <a href="index.html#contatti" class="block text-gold-400">Contatti</a>
@@ -43,7 +45,7 @@
   var FOOTER = `<footer class="py-10 px-6 text-center border-t border-gold-500/10 bg-ink-950">
   <img src="assets/img/logo.png" alt="Officina Fotografica" class="h-14 mx-auto mb-6 opacity-90">
   <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-6 text-[.68rem] uppercase tracking-[.25em]">
-    <a href="chi-siamo.html" class="nav-link">Chi siamo</a><a href="fotografia.html" class="nav-link">Fotografia</a><a href="video.html" class="nav-link">Video</a><a href="index.html#corsi" class="nav-link">Corsi</a><a href="index.html#contatti" class="nav-link">Contatti</a>
+    <a href="chi-siamo.html" class="nav-link">Chi siamo</a><a href="fotografia.html" class="nav-link">Fotografia</a><a href="video.html" class="nav-link">Video</a><a href="blog.html" class="nav-link">Blog</a><a href="index.html#corsi" class="nav-link">Corsi</a><a href="index.html#contatti" class="nav-link">Contatti</a>
   </nav>
   <div class="flex justify-center gap-3 mb-6">
     <a data-social="facebook" href="https://www.facebook.com/p/Officina-Fotografica-61578192890400/" target="_blank" rel="noopener" aria-label="Facebook" class="social"><i class="fa-brands fa-facebook-f"></i></a>
@@ -102,4 +104,7 @@
   document.querySelectorAll('[data-nav]').forEach(function (l) {
     l.classList.toggle('active', l.dataset.nav === page);
   });
+
+  // chat (pulsante in basso a destra)
+  var c = document.createElement('script'); c.src = 'js/chat.js'; document.body.appendChild(c);
 })();

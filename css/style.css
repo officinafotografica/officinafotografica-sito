@@ -83,3 +83,18 @@
 .eyebrow   { font-size:.82rem; }
 [class*="text-[.6"], [class*="text-[.7"] { font-size:.84rem !important; }
 .leading-8 { font-size:1.1rem; }
+
+/* ===== BLOG ===== */
+.blog-body { color:#d1d5db; font-size:1.05rem; line-height:2; }
+.blog-body p { margin-bottom:1.6rem; }
+.blog-body h2 { font-family:'Cormorant Garamond',serif; font-size:2.1rem; color:#fff; font-weight:400; margin:3rem 0 1.2rem; line-height:1.2; }
+.blog-body ul { list-style:none; margin:0 0 1.6rem; padding:0; }
+.blog-body li { position:relative; padding-left:1.6rem; margin-bottom:.6rem; }
+.blog-body li::before { content:""; position:absolute; left:0; top:.95rem; width:.7rem; height:1px; background:#c5a059; }
+.blog-body strong { color:#e2cb93; font-weight:500; }
+.blog-body a { color:#d4b062; text-decoration:underline; }
+
+/* ===== CHAT ===== */
+#chat-fab { position:fixed; right:1.25rem; bottom:1.25rem; z-index:45; width:3.5rem; height:3.5rem; border-radius:9999px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; cursor:pointer; box-shadow:0 12px 30px -8px rgba(0,0,0,.7); }
+#chat-panel { position:fixed; right:1.25rem; bottom:5.5rem; z-index:45; width:min(21rem,calc(100vw - 2.5rem)); background:#272830; border:1px solid rgba(197,160,89,.35); box-shadow:0 24px 50px -16px rgba(0,0,0,.8); padding:1.4rem; display:none; }
+#chat-panel.open { display:block; animation:pageIn .3s ease both; }
